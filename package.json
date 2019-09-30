@@ -1,24 +1,58 @@
 {
-  "name": "hello-world",
-  "description": "A Vue.js project",
-  "author": "Igor Luíz <igor@devstacks.com.br>",
+  "name": "sample-app-vue",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
-    "vue": "^2.0.0-beta.5"
+    "dateformat": "^3.0.3",
+    "kentico-cloud-delivery": "^5.7.2",
+    "lodash": "^4.17.13",
+    "qs": "^6.7.0",
+    "rxjs": "^6.5.2",
+    "twitter-widgets": "^1.0.0",
+    "universal-cookie": "^2.2.0",
+    "validator": "^10.11.0",
+    "vue": "^2.6.10",
+    "vue-i18n": "^7.8.1",
+    "vue-i18n-loader": "^1.0.0",
+    "vue-router": "^3.0.6",
+    "vue-scrollto": "^2.15.0",
+    "vue2-google-maps": "^0.8.12"
   },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-es2015": "^6.13.2",
-    "cross-env": "^1.0.6",
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.8.4",
-    "vue-loader": "^9.2.2",
-    "webpack": "^2.1.0-beta.20",
-    "webpack-dev-server": "^2.1.0-beta.0"
-  }
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "deepmerge": "^2.2.1",
+    "lint-staged": "^7.3.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
